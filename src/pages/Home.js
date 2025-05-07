@@ -1,4 +1,5 @@
 import { Container, Typography, Box, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import SchoolIcon from '@mui/icons-material/School';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import GroupsIcon from '@mui/icons-material/Groups';
@@ -7,6 +8,8 @@ import payne from '../assets/payne.png';
 import powoh from '../assets/powoh.png';
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <Box>
       {/* Hero Section */}
@@ -56,6 +59,7 @@ function Home() {
           <Button 
             variant="contained" 
             size="large"
+            onClick={() => navigate('/about')}
             sx={{
               background: 'rgba(255, 255, 255, 0.1)',
               backdropFilter: 'blur(10px)',

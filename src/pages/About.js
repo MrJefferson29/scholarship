@@ -12,6 +12,7 @@ import sinorine from '../assets/sinorine.png';
 import fidelis from '../assets/fidelis.png';
 import tezeh from '../assets/tezeh.png';
 import teneng from '../assets/teneng.png';
+import boss from '../assets/boss.png'
 
 
 const managementTeam = [
@@ -129,6 +130,47 @@ function About() {
           </Typography>
         </Paper>
 
+        {/* Objectives Section */}
+        <Paper 
+          elevation={0}
+          sx={{ 
+            p: 4, 
+            mb: 6,
+            background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+            borderRadius: 2,
+          }}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+            <EmojiEventsIcon sx={{ fontSize: 40, color: 'primary.main', mr: 2 }} />
+            <Typography variant="h4" component="h2" color="primary.main">
+              Our Objectives
+            </Typography>
+          </Box>
+          <Typography variant="body1" paragraph>
+            The Tenenghang Foundation has set forth the following key objectives:
+          </Typography>
+          <Box component="ul" sx={{ pl: 4 }}>
+            <Typography component="li" variant="body1" paragraph>
+              To promote and support academic excellence through scholarship programs for outstanding students
+            </Typography>
+            <Typography component="li" variant="body1" paragraph>
+              To provide assistance and support to orphans and vulnerable children in schools and orphanages
+            </Typography>
+            <Typography component="li" variant="body1" paragraph>
+              To encourage and facilitate indigenous development initiatives that improve living standards
+            </Typography>
+            <Typography component="li" variant="body1" paragraph>
+              To support vulnerable populations in developing sustainable livelihoods through petit trades and subsistence activities
+            </Typography>
+            <Typography component="li" variant="body1" paragraph>
+              To foster self-reliance and community development through local initiatives
+            </Typography>
+            <Typography component="li" variant="body1" paragraph>
+              To create awareness and advocate for the rights and welfare of vulnerable populations
+            </Typography>
+          </Box>
+        </Paper>
+
         {/* History Section */}
         <Paper 
           elevation={0}
@@ -180,6 +222,73 @@ function About() {
               Support for vulnerable populations in developing petit trades and subsistence activities
             </Typography>
           </Box>
+        </Paper>
+
+        {/* Founder's Profile Section */}
+        <Paper 
+          elevation={0}
+          sx={{ 
+            p: 4, 
+            mb: 6,
+            background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+            borderRadius: 2,
+          }}
+        >
+          <Typography 
+            variant="h4" 
+            component="h2" 
+            gutterBottom 
+            sx={{ 
+              textAlign: 'center',
+              mb: 4,
+              color: 'primary.main',
+              fontWeight: 600,
+            }}
+          >
+            Founder's Profile
+          </Typography>
+          <Grid container spacing={4} alignItems="center">
+            <Grid item xs={12} md={4}>
+              <Card 
+                sx={{ 
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  transition: 'transform 0.3s ease-in-out',
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                  },
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  height="400"
+                  image={boss}
+                  alt="Mr. Mboh Patrice Lumumba"
+                  sx={{ objectFit: 'cover' }}
+                />
+              </Card>
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box>
+                <Typography variant="h5" gutterBottom color="primary.main" sx={{ fontWeight: 600 }}>
+                  Mr. Mboh Patrice Lumumba
+                </Typography>
+                <Typography variant="h6" gutterBottom color="text.secondary">
+                  Founder & Executive President
+                </Typography>
+                <Typography variant="body1" paragraph>
+                  Mr. Mboh Patrice Lumumba is the visionary founder and Executive President of the Tenenghang Foundation. With a deep commitment to community development and education, he established the foundation in 2000 with the mission of upgrading living standards through indigenous and self-reliant development initiatives.
+                </Typography>
+                <Typography variant="body1" paragraph>
+                  Under his leadership, the foundation has grown to become a significant force in promoting academic excellence and supporting vulnerable populations in the North West Region of Cameroon and beyond. His dedication to empowering communities through education and sustainable development has touched countless lives.
+                </Typography>
+                <Typography variant="body1">
+                  Mr. Lumumba's vision continues to guide the foundation's efforts in creating lasting positive change in the community through various initiatives including scholarship programs, orphan support, and community development projects.
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
         </Paper>
 
         {/* Management Team Section */}
