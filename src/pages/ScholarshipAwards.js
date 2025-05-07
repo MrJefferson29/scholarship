@@ -178,104 +178,142 @@ function ScholarshipAwards() {
         <Paper 
           elevation={0}
           sx={{ 
-            p: 4, 
+            p: { xs: 2, sm: 4 }, 
             mb: 6,
             background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
             borderRadius: 2,
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-            <SchoolIcon sx={{ fontSize: 40, color: 'primary.main', mr: 2 }} />
-            <Typography variant="h4" component="h2" color="primary.main">
+            <SchoolIcon sx={{ fontSize: { xs: 30, sm: 40 }, color: 'primary.main', mr: 2 }} />
+            <Typography variant="h4" component="h2" color="primary.main" sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }}>
               GCE Ordinary Level Scholars
             </Typography>
           </Box>
-          <TableContainer 
-            component={Paper} 
-            sx={{ 
-              mb: 4,
-              boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-              borderRadius: 2,
-              overflow: 'hidden',
-            }}
-          >
-            <Table>
-              <TableHead>
-                <TableRow sx={{ backgroundColor: 'primary.main' }}>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold' }}>Name</TableCell>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold' }}>School</TableCell>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold' }}>Region</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {ordinaryLevelCandidates.map((candidate, index) => (
-                  <TableRow 
-                    key={index}
-                    sx={{ 
-                      '&:nth-of-type(odd)': { backgroundColor: 'rgba(0, 0, 0, 0.02)' },
-                      '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.04)' },
-                    }}
-                  >
-                    <TableCell>{candidate.name}</TableCell>
-                    <TableCell>{candidate.school}</TableCell>
-                    <TableCell>{candidate.region}</TableCell>
+          <Box sx={{ 
+            width: '100%', 
+            overflowX: 'auto',
+            '&::-webkit-scrollbar': {
+              height: '8px',
+            },
+            '&::-webkit-scrollbar-track': {
+              background: '#f1f1f1',
+              borderRadius: '4px',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              background: '#888',
+              borderRadius: '4px',
+              '&:hover': {
+                background: '#555',
+              },
+            },
+          }}>
+            <TableContainer 
+              component={Paper} 
+              sx={{ 
+                mb: 4,
+                boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                borderRadius: 2,
+                minWidth: { xs: 650, sm: '100%' },
+              }}
+            >
+              <Table>
+                <TableHead>
+                  <TableRow sx={{ backgroundColor: 'primary.main' }}>
+                    <TableCell sx={{ color: 'white', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Name</TableCell>
+                    <TableCell sx={{ color: 'white', fontWeight: 'bold', whiteSpace: 'nowrap' }}>School</TableCell>
+                    <TableCell sx={{ color: 'white', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Region</TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+                </TableHead>
+                <TableBody>
+                  {ordinaryLevelCandidates.map((candidate, index) => (
+                    <TableRow 
+                      key={index}
+                      sx={{ 
+                        '&:nth-of-type(odd)': { backgroundColor: 'rgba(0, 0, 0, 0.02)' },
+                        '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.04)' },
+                      }}
+                    >
+                      <TableCell sx={{ whiteSpace: 'nowrap' }}>{candidate.name}</TableCell>
+                      <TableCell sx={{ minWidth: { xs: 200, sm: 300 } }}>{candidate.school}</TableCell>
+                      <TableCell sx={{ whiteSpace: 'nowrap' }}>{candidate.region}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Box>
         </Paper>
 
         {/* Advanced Level Section */}
         <Paper 
           elevation={0}
           sx={{ 
-            p: 4, 
+            p: { xs: 2, sm: 4 }, 
             mb: 6,
             background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
             borderRadius: 2,
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-            <EmojiEventsIcon sx={{ fontSize: 40, color: 'primary.main', mr: 2 }} />
-            <Typography variant="h4" component="h2" color="primary.main">
+            <EmojiEventsIcon sx={{ fontSize: { xs: 30, sm: 40 }, color: 'primary.main', mr: 2 }} />
+            <Typography variant="h4" component="h2" color="primary.main" sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }}>
               GCE Advanced Level Scholars
             </Typography>
           </Box>
-          <TableContainer 
-            component={Paper} 
-            sx={{ 
-              mb: 4,
-              boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-              borderRadius: 2,
-              overflow: 'hidden',
-            }}
-          >
-            <Table>
-              <TableHead>
-                <TableRow sx={{ backgroundColor: 'primary.main' }}>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold' }}>Name</TableCell>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold' }}>School</TableCell>
-                  <TableCell sx={{ color: 'white', fontWeight: 'bold' }}>Region</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {advancedLevelCandidates.map((candidate, index) => (
-                  <TableRow 
-                    key={index}
-                    sx={{ 
-                      '&:nth-of-type(odd)': { backgroundColor: 'rgba(0, 0, 0, 0.02)' },
-                      '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.04)' },
-                    }}
-                  >
-                    <TableCell>{candidate.name}</TableCell>
-                    <TableCell>{candidate.school}</TableCell>
-                    <TableCell>{candidate.region}</TableCell>
+          <Box sx={{ 
+            width: '100%', 
+            overflowX: 'auto',
+            '&::-webkit-scrollbar': {
+              height: '8px',
+            },
+            '&::-webkit-scrollbar-track': {
+              background: '#f1f1f1',
+              borderRadius: '4px',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              background: '#888',
+              borderRadius: '4px',
+              '&:hover': {
+                background: '#555',
+              },
+            },
+          }}>
+            <TableContainer 
+              component={Paper} 
+              sx={{ 
+                mb: 4,
+                boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                borderRadius: 2,
+                minWidth: { xs: 650, sm: '100%' },
+              }}
+            >
+              <Table>
+                <TableHead>
+                  <TableRow sx={{ backgroundColor: 'primary.main' }}>
+                    <TableCell sx={{ color: 'white', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Name</TableCell>
+                    <TableCell sx={{ color: 'white', fontWeight: 'bold', whiteSpace: 'nowrap' }}>School</TableCell>
+                    <TableCell sx={{ color: 'white', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Region</TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+                </TableHead>
+                <TableBody>
+                  {advancedLevelCandidates.map((candidate, index) => (
+                    <TableRow 
+                      key={index}
+                      sx={{ 
+                        '&:nth-of-type(odd)': { backgroundColor: 'rgba(0, 0, 0, 0.02)' },
+                        '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.04)' },
+                      }}
+                    >
+                      <TableCell sx={{ whiteSpace: 'nowrap' }}>{candidate.name}</TableCell>
+                      <TableCell sx={{ minWidth: { xs: 200, sm: 300 } }}>{candidate.school}</TableCell>
+                      <TableCell sx={{ whiteSpace: 'nowrap' }}>{candidate.region}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Box>
         </Paper>
 
         {/* Event Gallery Section */}
