@@ -1,4 +1,4 @@
-import { Container, Typography, Box, Grid, Card, CardContent, CardMedia, Paper, Divider } from '@mui/material';
+import { Container, Typography, Box, Grid, Card, CardContent, CardMedia, Paper, Divider, Button } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import HistoryIcon from '@mui/icons-material/History';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
@@ -106,6 +106,32 @@ function About() {
             Dedicated to upgrading standards of living through indigenous and self-reliant development initiatives
           </Typography>
         </Container>
+      </Box>
+
+      {/* Apply for Scholarship Button */}
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, mb: 2 }}>
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdxFiROag4PeHmAK5Ezv9L8g4I-yTPO1bbRWXEOKm5_2aMq7g/viewform?usp=dialog"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            fontWeight: 600,
+            px: 5,
+            py: 1.5,
+            fontSize: '1.1rem',
+            boxShadow: 2,
+            borderRadius: 3,
+            background: 'linear-gradient(90deg, #1a237e 30%, #534bae 90%)',
+            '&:hover': {
+              background: 'linear-gradient(90deg, #534bae 30%, #1a237e 90%)',
+            },
+          }}
+        >
+          Apply for Scholarship
+        </Button>
       </Box>
 
       <Container maxWidth="lg" sx={{ py: 8 }}>
